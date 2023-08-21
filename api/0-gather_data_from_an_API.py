@@ -3,12 +3,13 @@
 returns information about his/her TODO list progress"""
 
 
-import sys
 import requests
+import sys
 
 if __name__ == "__main__":
     todos_response = requests.get("https://jsonplaceholder.typicode.com/todos")
-    employees_response = requests.get("https://jsonplaceholder.typicode.com/users")
+    employees_response = requests.get(
+        "https://jsonplaceholder.typicode.com/users")
 
     employee_id = int(sys.argv[1])
     todos = todos_response.json()
