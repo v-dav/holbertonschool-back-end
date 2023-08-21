@@ -20,7 +20,6 @@ if __name__ == "__main__":
     """Requierements"""
     employee_id = int(sys.argv[1])
     json_object = {}
-    task_dict = {}
     tasks_list = []
 
     for employee in employees:
@@ -29,6 +28,7 @@ if __name__ == "__main__":
 
     for task in todos:
         if task.get("userId") == employee_id:
+            task_dict = {}
             task_dict["task"] = task.get("title")
             task_dict["completed"] = task.get("completed")
             task_dict["username"] = our_employee.get("username")
